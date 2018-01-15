@@ -3,6 +3,7 @@ var created = false;
 module.exports = {
     userCreate: function(mongoose) {
         if (created) return mongoose.model('User');
+        var SchemaTypes = mongoose.Schema.Types;
         var Schema = mongoose.Schema;
         var userSchema = new Schema({
             openId: String,
@@ -13,6 +14,14 @@ module.exports = {
                 "bitCoin": Number,
                 "liteCoin": Number,
                 "dogCoin": Number
+            },
+            "profit": {
+                "today": Number,
+                "total": Number
+            },
+            "rank": {
+                "current": Number,
+                "total": Number
             }
         });
         created = true;

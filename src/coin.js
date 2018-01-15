@@ -12,6 +12,5 @@ module.exports = {
         });
         created = true;
         return mongoose.model('Coin', coinSchema);
-
     }
 }

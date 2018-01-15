@@ -8,10 +8,20 @@ module.exports = {
             timestamp: Number,
             openId: String,
             type: {
-                bitCoin: Number,
-                liteCoin: Number,
-                dogCoin: Number
-            }
+                bitCoin: {
+                    amount: Number,
+                    price: Number
+                },
+                liteCoin: {
+                    amount: Number,
+                    price: Number
+                },
+                dogCoin: {
+                    amount: Number,
+                    price: Number
+                }
+            },
+            behavior: String
         });
         created = true;
         return mongoose.model('Deal', dealSchema);
